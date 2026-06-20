@@ -1,0 +1,37 @@
+{
+  "name": "FastDDS practice",
+  "build": {
+    "dockerfile": "../docker/Dockerfile",
+  },
+  "remoteUser": "root",
+  //"workspaceFolder": "/workspace",
+  "mounts": [
+    //"source=${localWorkspaceFolder}/src,target=/home/sgwta/FastDDS_practice/src,type=bind"
+  ],
+  "runArgs": [
+    "--init",
+    "--network=host",
+    //"--privileged",
+    //"--env=DISPLAY=${localEnv:DISPLAY}",
+    //"--env=QT_X11_NO_MITSHM=1",
+    //"--volume=/tmp/.X11-unix:/tmp/.X11-unix"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [   // 拡張機能の"More Info"の"Identifier"のIDを記載する
+        "ms-python.python",         // Python 用の VSCode 拡張機能
+        "ms-vscode.cpptools",       // C/C++ 用の VSCode 拡張機能
+        "mine.cpplint",
+        "DavidAnson.vscode-markdownlint",
+        "ms-iot.vscode-ros",
+        "ms-python.debugpy",
+        "twxs.cmake",
+        "mhutchie.git-graph",          // Git Graph拡張機能
+        "donjayamanne.githistory",     // Git History拡張機能
+        "ms-azuretools.vscode-docker", // Docker拡張機能
+        "google.geminicodeassist",     // Gemini Code Assist
+      ]
+    }
+  },
+  "postCreateCommand": "./.devcontainer/post_create_command.sh"
+}
